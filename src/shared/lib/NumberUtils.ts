@@ -5,6 +5,8 @@ export function toConditionalPrecision(
 ): string {
     if (0.000001 <= number && number < threshold) {
         return number.toExponential(precision);
+    } else if (number === 0) {
+        return '< 10^-10';
     }
 
     return number.toPrecision(precision);
